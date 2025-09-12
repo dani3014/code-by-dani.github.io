@@ -5,51 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dani | AI Entrepreneur Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <style>
+    html { scroll-behavior: smooth; } /* Smooth scrolling */
+  </style>
 </head>
 <body class="bg-white text-gray-900 antialiased">
 
   <!-- Hero Section -->
   <section class="relative h-screen flex flex-col items-center justify-center text-center bg-gradient-to-b from-white to-gray-50">
-    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6" data-aos="fade-up">
       Building <span class="text-blue-600">AI Solutions</span> for the Future
     </h1>
-    <p class="text-lg md:text-xl max-w-2xl text-gray-600 mb-8">
+    <p class="text-lg md:text-xl max-w-2xl text-gray-600 mb-8" data-aos="fade-up" data-aos-delay="200">
       Hi, I’m Dani — an AI entrepreneur and tech builder, blending business with cutting-edge AI to help companies scale and innovate.
     </p>
-    <a href="#projects" class="px-6 py-3 bg-blue-600 text-white rounded-full shadow-lg hover:scale-105 transition transform font-semibold">
+    <a href="#projects" class="px-6 py-3 bg-blue-600 text-white rounded-full shadow-lg hover:scale-105 transition transform font-semibold" data-aos="zoom-in" data-aos-delay="400">
       See My Work
     </a>
   </section>
 
-  <!-- Achievements / Credibility -->
+  <!-- Achievements -->
   <section class="py-20 bg-gray-50 text-center">
-    <h2 class="text-3xl font-bold mb-12">Recognitions & Achievements</h2>
+    <h2 class="text-3xl font-bold mb-12" data-aos="fade-up">Recognitions & Achievements</h2>
     <div class="flex flex-wrap justify-center gap-8 text-gray-700">
-      <div class="p-4 bg-white shadow rounded-lg">🎓 IISMA Awardee – Coventry University (UK)</div>
-      <div class="p-4 bg-white shadow rounded-lg">🏆 Top 3 Global Careers – Singapore (SejutaCita)</div>
-      <div class="p-4 bg-white shadow rounded-lg">💡 AI Entrepreneur in the Making</div>
+      <div class="p-4 bg-white shadow rounded-lg" data-aos="fade-up" data-aos-delay="100">🎓 IISMA Awardee – Coventry University (UK)</div>
+      <div class="p-4 bg-white shadow rounded-lg" data-aos="fade-up" data-aos-delay="200">🏆 Top 3 Global Careers – Singapore (SejutaCita)</div>
+      <div class="p-4 bg-white shadow rounded-lg" data-aos="fade-up" data-aos-delay="300">💡 AI Entrepreneur in the Making</div>
     </div>
   </section>
 
   <!-- Skills -->
   <section id="skills" class="py-20 max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-12">What I Do Best</h2>
+    <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">What I Do Best</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-      <div class="p-6 bg-white shadow rounded-lg hover:shadow-xl transition">AI & Machine Learning</div>
-      <div class="p-6 bg-white shadow rounded-lg hover:shadow-xl transition">Data Dashboards (Grafana, Node-RED)</div>
-      <div class="p-6 bg-white shadow rounded-lg hover:shadow-xl transition">Fullstack Web Dev</div>
-      <div class="p-6 bg-white shadow rounded-lg hover:shadow-xl transition">Business Strategy</div>
+      <div class="p-6 bg-white shadow rounded-lg hover:shadow-xl transition" data-aos="zoom-in">AI & Machine Learning</div>
+      <div class="p-6 bg-white shadow rounded-lg hover:shadow-xl transition" data-aos="zoom-in" data-aos-delay="100">Data Dashboards</div>
+      <div class="p-6 bg-white shadow rounded-lg hover:shadow-xl transition" data-aos="zoom-in" data-aos-delay="200">Fullstack Web Dev</div>
+      <div class="p-6 bg-white shadow rounded-lg hover:shadow-xl transition" data-aos="zoom-in" data-aos-delay="300">Business Strategy</div>
     </div>
   </section>
 
   <!-- Projects -->
   <section id="projects" class="py-20 bg-gray-50">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
+      <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Featured Projects</h2>
       <div class="grid md:grid-cols-2 gap-10">
         
         <!-- Project Card -->
-        <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition">
+        <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition" data-aos="fade-up">
           <h3 class="text-2xl font-semibold mb-4">⚡ Energy Monitoring Dashboard</h3>
           <p class="text-gray-600 mb-4">
             Real-time system with Node-RED, InfluxDB, and Grafana for tracking energy usage 24/7 across multiple machines.
@@ -60,7 +68,7 @@
         </div>
 
         <!-- Project Card -->
-        <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition">
+        <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition" data-aos="fade-up" data-aos-delay="200">
           <h3 class="text-2xl font-semibold mb-4">🤖 AI Chatbot for Marketing Agency</h3>
           <p class="text-gray-600 mb-4">
             End-to-end chatbot demo supporting prospecting, lead management, and conversation flows using Botpress.
@@ -76,11 +84,11 @@
 
   <!-- Contact -->
   <section id="contact" class="py-20 text-center">
-    <h2 class="text-3xl font-bold mb-6">Let’s Build Something Great</h2>
-    <p class="max-w-xl mx-auto text-gray-600 mb-8">
+    <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">Let’s Build Something Great</h2>
+    <p class="max-w-xl mx-auto text-gray-600 mb-8" data-aos="fade-up" data-aos-delay="200">
       Whether you’re a business looking to integrate AI or someone interested in collaborating — let’s connect.
     </p>
-    <div class="flex justify-center gap-6">
+    <div class="flex justify-center gap-6" data-aos="fade-up" data-aos-delay="400">
       <a href="mailto:your.email@gmail.com" class="px-6 py-3 bg-blue-600 text-white rounded-full shadow hover:scale-105 transition">Email Me</a>
       <a href="https://www.linkedin.com/in/yourlinkedin" target="_blank" class="px-6 py-3 border border-gray-300 rounded-full hover:bg-gray-100 transition">LinkedIn</a>
       <a href="https://github.com/yourusername" target="_blank" class="px-6 py-3 border border-gray-300 rounded-full hover:bg-gray-100 transition">GitHub</a>
@@ -88,9 +96,16 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-8 bg-gray-900 text-gray-400 text-center">
+  <footer class="py-8 bg-gray-900 text-gray-400 text-center" data-aos="fade-in">
     <p>© 2025 Dani. Designed with precision and passion. 🚀</p>
   </footer>
 
+  <!-- Init AOS -->
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true, // animate only once
+    });
+  </script>
 </body>
 </html>
