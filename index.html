@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,16 +12,35 @@
 
   <style>
     html { scroll-behavior: smooth; }
+    .dark-mode { background-color: #0f172a; color: #f1f5f9; }
   </style>
 </head>
-<body class="bg-white text-gray-900 antialiased">
+<body class="bg-white text-gray-900 antialiased transition-colors duration-500">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+      <h1 class="font-bold text-xl text-blue-600">Dani</h1>
+      <ul class="flex space-x-6 font-medium">
+        <li><a href="#home" class="hover:text-blue-600">Home</a></li>
+        <li><a href="#about" class="hover:text-blue-600">About</a></li>
+        <li><a href="#achievements" class="hover:text-blue-600">Recognitions</a></li>
+        <li><a href="#skills" class="hover:text-blue-600">Skills</a></li>
+        <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
+        <li><a href="#contact" class="hover:text-blue-600">Contacts</a></li>
+      </ul>
+      <button id="toggleDark" class="ml-4 px-3 py-1 border rounded text-sm hover:bg-gray-100 dark:hover:bg-gray-800">
+        🌙
+      </button>
+    </div>
+  </nav>
 
   <!-- Hero Section -->
-  <section class="relative h-screen flex flex-col items-center justify-center text-center bg-gradient-to-b from-white to-gray-50">
+  <section id="home" class="h-screen flex flex-col items-center justify-center text-center bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
     <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6" data-aos="fade-up">
       Building <span class="text-blue-600">AI Solutions</span> for Business Growth
     </h1>
-    <p class="text-lg md:text-xl max-w-2xl text-gray-600 mb-8" data-aos="fade-up" data-aos-delay="200">
+    <p class="text-lg md:text-xl max-w-2xl text-gray-600 dark:text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
       Hi, I’m Dani — an AI Prompt Engineer & Entrepreneur, blending business with cutting-edge AI to help companies innovate and scale.
     </p>
     <a href="#projects" class="px-6 py-3 bg-blue-600 text-white rounded-full shadow-lg hover:scale-105 transition transform font-semibold" data-aos="zoom-in" data-aos-delay="400">
@@ -29,74 +48,119 @@
     </a>
   </section>
 
+  <!-- About -->
+  <section id="about" class="py-20 max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+    <img src="assets/profile.jpg" alt="Foto Dani" class="w-48 h-48 rounded-full object-cover shadow-lg" data-aos="fade-right">
+    <div data-aos="fade-left">
+      <h2 class="text-3xl font-bold mb-4">About Me</h2>
+      <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+        I’m Dani, an AI Prompt Engineer & Content Strategist passionate about leveraging AI to transform businesses.
+        From scaling a student-led business to <strong>89.9% revenue growth</strong>, to building real-time
+        dashboards for FMCG industries, I’ve consistently proven how AI can unlock business potential. <br><br>
+        Selected as an <strong>IISMA UK 2024 Awardee</strong> and <strong>Top 3 Finalist at SGC Singapore</strong>,
+        I’ve represented Indonesia on global stages, merging business strategy, technology, and storytelling.
+        My focus now is on building scalable AI solutions for enterprises while pushing myself to be among the
+        top 0.1% in Indonesia in wealth, health, and influence.
+      </p>
+    </div>
+  </section>
+
   <!-- Achievements -->
-  <section class="py-20 bg-gray-50 text-center">
+  <section id="achievements" class="py-20 bg-gray-50 dark:bg-gray-800 text-center">
     <h2 class="text-3xl font-bold mb-12" data-aos="fade-up">Recognitions & Achievements</h2>
-    <div class="flex flex-wrap justify-center gap-8 text-gray-700">
-      <div class="p-4 bg-white shadow rounded-lg" data-aos="fade-up" data-aos-delay="100">🎓 IISMA Awardee – Coventry University (UK)</div>
-      <div class="p-4 bg-white shadow rounded-lg" data-aos="fade-up" data-aos-delay="200">🏆 Top 3 Global Careers – Singapore (SejutaCita)</div>
-      <div class="p-4 bg-white shadow rounded-lg" data-aos="fade-up" data-aos-delay="300">📄 IEEE SOFTT 2025 Accepted Paper</div>
+    <div class="flex flex-wrap justify-center gap-8 text-gray-700 dark:text-gray-200">
+      <div class="p-4 bg-white dark:bg-gray-900 shadow rounded-lg" data-aos="fade-up" data-aos-delay="100">🎓 IISMA Awardee – Coventry University (UK)</div>
+      <div class="p-4 bg-white dark:bg-gray-900 shadow rounded-lg" data-aos="fade-up" data-aos-delay="200">🏆 Top 3 Global Careers – Singapore (SejutaCita)</div>
+      <div class="p-4 bg-white dark:bg-gray-900 shadow rounded-lg" data-aos="fade-up" data-aos-delay="300">📄 IEEE SOFTT 2025 Accepted Paper</div>
     </div>
   </section>
 
   <!-- Skills -->
   <section id="skills" class="py-20 max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">What I Do Best</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-      <div class="p-6 bg-white shadow rounded-lg hover:shadow-xl transition" data-aos="zoom-in">GPT Prompt Engineering</div>
-      <div class="p-6 bg-white shadow rounded-lg hover:shadow-xl transition" data-aos="zoom-in" data-aos-delay="100">AI & Machine Learning</div>
-      <div class="p-6 bg-white shadow rounded-lg hover:shadow-xl transition" data-aos="zoom-in" data-aos-delay="200">Real-time System Monitoring</div>
-      <div class="p-6 bg-white shadow rounded-lg hover:shadow-xl transition" data-aos="zoom-in" data-aos-delay="300">Business & Content Strategy</div>
+    <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Skills</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+      <div class="flex flex-col items-center" data-aos="zoom-in">
+        <img src="assets/python.svg" alt="Python logo" class="w-12 mb-3">
+        <p>Python</p>
+      </div>
+      <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="100">
+        <img src="assets/gpt.svg" alt="GPT logo" class="w-12 mb-3">
+        <p>Prompt Engineering</p>
+      </div>
+      <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="200">
+        <img src="assets/grafana.svg" alt="Grafana logo" class="w-12 mb-3">
+        <p>Grafana Dashboards</p>
+      </div>
+      <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="300">
+        <img src="assets/node-red.svg" alt="Node-RED logo" class="w-12 mb-3">
+        <p>Node-RED & IoT</p>
+      </div>
+      <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="400">
+        <img src="assets/sklearn.svg" alt="Scikit-learn logo" class="w-12 mb-3">
+        <p>Machine Learning</p>
+      </div>
+      <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="500">
+        <img src="assets/notion.svg" alt="Notion logo" class="w-12 mb-3">
+        <p>Notion Automation</p>
+      </div>
+      <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="600">
+        <img src="assets/canva.svg" alt="Canva logo" class="w-12 mb-3">
+        <p>AI Content Design</p>
+      </div>
+      <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="700">
+        <img src="assets/sql.svg" alt="SQL logo" class="w-12 mb-3">
+        <p>SQL & Data Analysis</p>
+      </div>
     </div>
   </section>
 
   <!-- Projects -->
-  <section id="projects" class="py-20 bg-gray-50">
+  <section id="projects" class="py-20 bg-gray-50 dark:bg-gray-800">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Featured Projects</h2>
       <div class="grid md:grid-cols-2 gap-10">
 
         <!-- Project 1 -->
-        <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition" data-aos="fade-up">
+        <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-8 hover:shadow-2xl transition" data-aos="fade-up">
           <img src="assets/project-college-essentials.jpg" alt="Ini gambar toko online College Essentials dengan AI marketing" class="rounded mb-4">
           <h3 class="text-2xl font-semibold mb-4">📈 College Essentials – AI Growth</h3>
-          <p class="text-gray-600 mb-4">
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
             Scaled online sales by <strong>89.9%</strong> using GPT-powered copywriting, Instagram marketing, and automation pipelines. Generated Rp26.8M revenue.
           </p>
         </div>
 
         <!-- Project 2 -->
-        <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition" data-aos="fade-up" data-aos-delay="200">
+        <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-8 hover:shadow-2xl transition" data-aos="fade-up" data-aos-delay="200">
           <img src="assets/project-energy-dashboard.jpg" alt="Ini gambar dashboard monitoring energi realtime di pabrik OT Group" class="rounded mb-4">
           <h3 class="text-2xl font-semibold mb-4">⚡ Energy Monitoring System – OT Group</h3>
-          <p class="text-gray-600 mb-4">
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
             Developed real-time dashboards with Node-RED, InfluxDB, and Grafana. Used daily by managers, improving energy insights and reducing downtime.
           </p>
         </div>
 
         <!-- Project 3 -->
-        <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition" data-aos="fade-up">
+        <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-8 hover:shadow-2xl transition" data-aos="fade-up">
           <img src="assets/project-ieee-paper.jpg" alt="Ini gambar ilustrasi paper IEEE dengan grafik energi dan AI" class="rounded mb-4">
           <h3 class="text-2xl font-semibold mb-4">📄 Predictive Energy Usage (IEEE Paper)</h3>
-          <p class="text-gray-600 mb-4">
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
             Extended internship into research using Random Forest to predict short-term energy usage. Accepted at <strong>IEEE SOFTT 2025</strong>.
           </p>
         </div>
 
         <!-- Project 4 -->
-        <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition" data-aos="fade-up" data-aos-delay="200">
+        <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-8 hover:shadow-2xl transition" data-aos="fade-up" data-aos-delay="200">
           <img src="assets/project-spotify.jpg" alt="Ini gambar grafik data musik Spotify dataset" class="rounded mb-4">
           <h3 class="text-2xl font-semibold mb-4">🎶 Spotify Data Analysis</h3>
-          <p class="text-gray-600 mb-4">
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
             Analyzed 22,000+ data points with Scikit-learn models, visualizing trends in genre, tempo, and artist correlation for business insights.
           </p>
         </div>
 
         <!-- Project 5 -->
-        <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition" data-aos="fade-up">
+        <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-8 hover:shadow-2xl transition" data-aos="fade-up">
           <img src="assets/project-climate.jpg" alt="Ini gambar grafik clustering pola iklim" class="rounded mb-4">
           <h3 class="text-2xl font-semibold mb-4">🌍 Climate Pattern Clustering</h3>
-          <p class="text-gray-600 mb-4">
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
             Processed 2.3M+ data points using K-Means, DBSCAN, and Hierarchical Clustering. Executed during IISMA exchange at Coventry University.
           </p>
         </div>
@@ -108,13 +172,13 @@
   <!-- Contact -->
   <section id="contact" class="py-20 text-center">
     <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">Let’s Build Something Great</h2>
-    <p class="max-w-xl mx-auto text-gray-600 mb-8" data-aos="fade-up" data-aos-delay="200">
+    <p class="max-w-xl mx-auto text-gray-600 dark:text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
       Whether you’re a business looking to integrate AI or someone interested in collaborating — let’s connect.
     </p>
     <div class="flex justify-center gap-6" data-aos="fade-up" data-aos-delay="400">
       <a href="mailto:dani.muhammad.k@gmail.com" class="px-6 py-3 bg-blue-600 text-white rounded-full shadow hover:scale-105 transition">Email Me</a>
-      <a href="https://www.linkedin.com/in/dani-muhammad" target="_blank" class="px-6 py-3 border border-gray-300 rounded-full hover:bg-gray-100 transition">LinkedIn</a>
-      <a href="https://github.com/dani-muhammad" target="_blank" class="px-6 py-3 border border-gray-300 rounded-full hover:bg-gray-100 transition">GitHub</a>
+      <a href="https://www.linkedin.com/in/dani-muhammad" target="_blank" class="px-6 py-3 border border-gray-300 dark:border-gray-600 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition">LinkedIn</a>
+      <a href="https://github.com/dani-muhammad" target="_blank" class="px-6 py-3 border border-gray-300 dark:border-gray-600 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition">GitHub</a>
     </div>
   </section>
 
@@ -123,11 +187,16 @@
     <p>© 2025 Dani. Designed with precision and passion. 🚀</p>
   </footer>
 
-  <!-- Init AOS -->
+  <!-- Init AOS + Dark Mode -->
   <script>
     AOS.init({
       duration: 1000,
       once: true,
+    });
+
+    const toggleDark = document.getElementById('toggleDark');
+    toggleDark.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
     });
   </script>
 </body>
