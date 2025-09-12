@@ -3,105 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Muhammad Dani | Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>Dani | AI Entrepreneur Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 text-gray-800">
-
-  <!-- Navbar -->
-  <header class="bg-white shadow sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
-      <h1 class="text-xl font-bold">Muhammad Dani</h1>
-      <nav class="space-x-4">
-        <a href="#about" class="hover:text-blue-500">About</a>
-        <a href="#skills" class="hover:text-blue-500">Skills</a>
-        <a href="#projects" class="hover:text-blue-500">Projects</a>
-        <a href="#contact" class="hover:text-blue-500">Contact</a>
-      </nav>
-    </div>
-  </header>
+<body class="bg-white text-gray-900 antialiased">
 
   <!-- Hero Section -->
-  <section class="text-center py-16 bg-gradient-to-r from-blue-100 to-blue-50">
-    <h2 class="text-4xl font-bold mb-4">Hi, I’m Muhammad Dani 👋</h2>
-    <p class="max-w-2xl mx-auto text-lg">
-      A passionate <span class="font-semibold">AI Enthusiast</span> & aspiring <span class="font-semibold">Entrepreneur</span> from Indonesia.
+  <section class="relative h-screen flex flex-col items-center justify-center text-center bg-gradient-to-b from-white to-gray-50">
+    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+      Building <span class="text-blue-600">AI Solutions</span> for the Future
+    </h1>
+    <p class="text-lg md:text-xl max-w-2xl text-gray-600 mb-8">
+      Hi, I’m Dani — an AI entrepreneur and tech builder, blending business with cutting-edge AI to help companies scale and innovate.
     </p>
+    <a href="#projects" class="px-6 py-3 bg-blue-600 text-white rounded-full shadow-lg hover:scale-105 transition transform font-semibold">
+      See My Work
+    </a>
   </section>
 
-  <!-- About -->
-  <section id="about" class="max-w-4xl mx-auto py-16 px-4">
-    <h3 class="text-2xl font-bold mb-4">About Me</h3>
-    <p>
-      I’m a graduate in Information Systems from Telkom University and an IISMA Awardee at Coventry University.
-      Currently focused on building AI-powered solutions and agencies. I’m driven by tech, business, and personal growth.
-    </p>
+  <!-- Achievements / Credibility -->
+  <section class="py-20 bg-gray-50 text-center">
+    <h2 class="text-3xl font-bold mb-12">Recognitions & Achievements</h2>
+    <div class="flex flex-wrap justify-center gap-8 text-gray-700">
+      <div class="p-4 bg-white shadow rounded-lg">🎓 IISMA Awardee – Coventry University (UK)</div>
+      <div class="p-4 bg-white shadow rounded-lg">🏆 Top 3 Global Careers – Singapore (SejutaCita)</div>
+      <div class="p-4 bg-white shadow rounded-lg">💡 AI Entrepreneur in the Making</div>
+    </div>
   </section>
 
   <!-- Skills -->
-  <section id="skills" class="bg-gray-100 py-16 px-4">
-    <div class="max-w-4xl mx-auto">
-      <h3 class="text-2xl font-bold mb-6">Skills</h3>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-        <div class="bg-white shadow rounded-lg p-4">Python</div>
-        <div class="bg-white shadow rounded-lg p-4">JavaScript</div>
-        <div class="bg-white shadow rounded-lg p-4">Node-RED</div>
-        <div class="bg-white shadow rounded-lg p-4">AI/ML</div>
-        <div class="bg-white shadow rounded-lg p-4">Data Science</div>
-        <div class="bg-white shadow rounded-lg p-4">Dashboarding (Grafana)</div>
-        <div class="bg-white shadow rounded-lg p-4">Business Strategy</div>
-        <div class="bg-white shadow rounded-lg p-4">Entrepreneurship</div>
-      </div>
+  <section id="skills" class="py-20 max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-12">What I Do Best</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div class="p-6 bg-white shadow rounded-lg hover:shadow-xl transition">AI & Machine Learning</div>
+      <div class="p-6 bg-white shadow rounded-lg hover:shadow-xl transition">Data Dashboards (Grafana, Node-RED)</div>
+      <div class="p-6 bg-white shadow rounded-lg hover:shadow-xl transition">Fullstack Web Dev</div>
+      <div class="p-6 bg-white shadow rounded-lg hover:shadow-xl transition">Business Strategy</div>
     </div>
   </section>
 
   <!-- Projects -->
-  <section id="projects" class="max-w-5xl mx-auto py-16 px-4">
-    <h3 class="text-2xl font-bold mb-6">Projects</h3>
-    <div class="grid md:grid-cols-2 gap-8">
-      
-      <!-- Project Card -->
-      <div class="bg-white shadow-lg rounded-lg p-6">
-        <h4 class="text-xl font-semibold mb-2">Energy Monitoring Dashboard</h4>
-        <p class="mb-4">
-          Built a real-time monitoring system with Node-RED, InfluxDB, and Grafana to track energy usage across machines.
-        </p>
-        <a href="https://github.com/yourusername/energy-dashboard" target="_blank" class="text-blue-600 hover:underline">
-          View Project →
-        </a>
-      </div>
+  <section id="projects" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
+      <div class="grid md:grid-cols-2 gap-10">
+        
+        <!-- Project Card -->
+        <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition">
+          <h3 class="text-2xl font-semibold mb-4">⚡ Energy Monitoring Dashboard</h3>
+          <p class="text-gray-600 mb-4">
+            Real-time system with Node-RED, InfluxDB, and Grafana for tracking energy usage 24/7 across multiple machines.
+          </p>
+          <a href="https://github.com/yourusername/energy-dashboard" target="_blank" class="text-blue-600 hover:underline">
+            View Project →
+          </a>
+        </div>
 
-      <!-- Another Project Card -->
-      <div class="bg-white shadow-lg rounded-lg p-6">
-        <h4 class="text-xl font-semibold mb-2">AI Chatbot for Digital Marketing</h4>
-        <p class="mb-4">
-          Created an end-to-end AI chatbot demo for an agency, supporting prospecting and lead management.
-        </p>
-        <a href="https://github.com/yourusername/ai-chatbot" target="_blank" class="text-blue-600 hover:underline">
-          View Project →
-        </a>
-      </div>
+        <!-- Project Card -->
+        <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition">
+          <h3 class="text-2xl font-semibold mb-4">🤖 AI Chatbot for Marketing Agency</h3>
+          <p class="text-gray-600 mb-4">
+            End-to-end chatbot demo supporting prospecting, lead management, and conversation flows using Botpress.
+          </p>
+          <a href="https://github.com/yourusername/ai-chatbot" target="_blank" class="text-blue-600 hover:underline">
+            View Project →
+          </a>
+        </div>
 
+      </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="bg-gray-100 py-16 px-4">
-    <div class="max-w-4xl mx-auto text-center">
-      <h3 class="text-2xl font-bold mb-4">Contact</h3>
-      <p class="mb-6">Let’s connect! Reach me on any of the platforms below:</p>
-      <div class="flex justify-center space-x-6">
-        <a href="mailto:your.email@gmail.com" class="text-blue-600 hover:underline">Email</a>
-        <a href="https://www.linkedin.com/in/yourlinkedin" target="_blank" class="text-blue-600 hover:underline">LinkedIn</a>
-        <a href="https://instagram.com/yourinsta" target="_blank" class="text-blue-600 hover:underline">Instagram</a>
-        <a href="https://github.com/yourusername" target="_blank" class="text-blue-600 hover:underline">GitHub</a>
-      </div>
+  <section id="contact" class="py-20 text-center">
+    <h2 class="text-3xl font-bold mb-6">Let’s Build Something Great</h2>
+    <p class="max-w-xl mx-auto text-gray-600 mb-8">
+      Whether you’re a business looking to integrate AI or someone interested in collaborating — let’s connect.
+    </p>
+    <div class="flex justify-center gap-6">
+      <a href="mailto:your.email@gmail.com" class="px-6 py-3 bg-blue-600 text-white rounded-full shadow hover:scale-105 transition">Email Me</a>
+      <a href="https://www.linkedin.com/in/yourlinkedin" target="_blank" class="px-6 py-3 border border-gray-300 rounded-full hover:bg-gray-100 transition">LinkedIn</a>
+      <a href="https://github.com/yourusername" target="_blank" class="px-6 py-3 border border-gray-300 rounded-full hover:bg-gray-100 transition">GitHub</a>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-white text-center py-6 mt-10 border-t">
-    <p>© 2025 Muhammad Dani. Built with ❤️ using GitHub Pages.</p>
+  <footer class="py-8 bg-gray-900 text-gray-400 text-center">
+    <p>© 2025 Dani. Designed with precision and passion. 🚀</p>
   </footer>
 
 </body>
