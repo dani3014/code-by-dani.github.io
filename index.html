@@ -4,26 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dani | AI Entrepreneur Portfolio</title>
-  
-  <!-- Tailwind -->
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
     }
   </script>
-  <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- AOS Animation Library -->
+  <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <style>
     html { scroll-behavior: smooth; }
+    /* Animasi toggle icon */
+    .rotate-swap {
+      transition: transform 0.5s ease, opacity 0.3s ease;
+    }
+    .hidden-icon {
+      opacity: 0;
+      transform: rotate(90deg) scale(0.5);
+      position: absolute;
+    }
+    .visible-icon {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+      position: relative;
+    }
   </style>
 </head>
-<body class="bg-white text-gray-800 antialiased transition-colors duration-500">
+<body class="bg-white text-gray-800 antialiased transition-colors duration-500 dark:bg-gray-900 dark:text-gray-200">
+
   <!-- Navbar -->
-  <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow z-50">
+  <nav class="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow z-50">
     <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
       <h1 class="font-bold text-xl text-blue-600">Dani</h1>
       <ul class="flex space-x-6 font-medium">
@@ -34,16 +49,16 @@
         <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
         <li><a href="#contact" class="hover:text-blue-600">Contacts</a></li>
       </ul>
-      <button id="toggleDark" class="ml-4 px-3 py-1 border rounded text-sm hover:bg-gray-100">
-        🌙
+      <!-- Toggle Dark Button -->
+      <button id="toggleDark" class="ml-4 p-2 border rounded-full relative w-10 h-10 flex items-center justify-center">
+        <span id="moon" class="rotate-swap visible-icon">🌙</span>
+        <span id="sun" class="rotate-swap hidden-icon">☀️</span>
       </button>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section id="home" class="h-screen flex flex-col items-center justify-center text-center 
-      bg-gradient-to-b from-white to-gray-50 
-      dark:from-gray-900 dark:to-gray-800">
+  <!-- Hero -->
+  <section id="home" class="h-screen flex flex-col items-center justify-center text-center bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
     <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-gray-900 dark:text-white" data-aos="fade-up">
       Building <span class="text-blue-600">AI Solutions</span> for Business Growth
     </h1>
@@ -190,16 +205,36 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-8 bg-gray-900 text-gray-400 text-center" data-aos="fade-in">
+  <footer class="py-8 bg-gray-900 text-gray-400 text-center dark:bg-gray-950" data-aos="fade-in">
     <p>© 2025 Dani. Designed with precision and passion. 🚀</p>
   </footer>
 
-  <!-- Init AOS + Dark Mode -->
+  <!-- Scripts -->
   <script>
     AOS.init({ duration: 1000, once: true });
+
     const toggleDark = document.getElementById('toggleDark');
+    const moon = document.getElementById('moon');
+    const sun = document.getElementById('sun');
+
+    // Load preference
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+      moon.classList.replace('visible-icon', 'hidden-icon');
+      sun.classList.replace('hidden-icon', 'visible-icon');
+    }
+
     toggleDark.addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.toggle('dark');
+      if (isDark) {
+        localStorage.setItem('theme', 'dark');
+        moon.classList.replace('visible-icon', 'hidden-icon');
+        sun.classList.replace('hidden-icon', 'visible-icon');
+      } else {
+        localStorage.setItem('theme', 'light');
+        sun.classList.replace('visible-icon', 'hidden-icon');
+        moon.classList.replace('hidden-icon', 'visible-icon');
+      }
     });
   </script>
 </body>

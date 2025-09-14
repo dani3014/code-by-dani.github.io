@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Mode Toggle Example</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+
+  <style>
+    /* Animasi untuk toggle icon */
+    .rotate-swap {
+      transition: transform 0.5s ease, opacity 0.3s ease;
+    }
+    .hidden-icon {
+      opacity: 0;
+      transform: rotate(90deg) scale(0.5);
+      position: absolute;
+    }
+    .visible-icon {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+      position: relative;
+    }
+  </style>
+</head>
+<body class="h-screen flex items-center justify-center bg-white text-black dark:bg-black dark:text-white transition-colors duration-500">
+
+  <div class="space-y-4 text-center">
+    <button id="toggleDark" class="p-3 border rounded-full relative w-12 h-12 flex items-center justify-center">
+      <!-- Moon -->
+      <span id="moon" class="rotate-swap visible-icon">🌙</span>
+      <!-- Sun -->
+      <span id="sun" class="rotate-swap hidden-icon">☀️</span>
+    </button>
+    <p id="modeLabel">Mode: light</p>
+  </div>
+
+  <script>
+    const toggleDark = document.getElementById('toggleDark');
+    const moon = document.getElementById('moon');
+    const sun = document.getElementById('sun');
+    const modeLabel = document.getElementById('modeLabel');
+
+    // Load preference dari localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+      moon.classList.replace('visible-icon', 'hidden-icon');
+      sun.classList.replace('hidden-icon', 'visible-icon');
+      modeLabel.textContent = 'Mode: dark';
+    }
+
+    toggleDark.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+
+      if (isDark) {
+        localStorage.setItem('theme', 'dark');
+        moon.classList.replace('visible-icon', 'hidden-icon');
+        sun.classList.replace('hidden-icon', 'visible-icon');
+        modeLabel.textContent = 'Mode: dark';
+      } else {
+        localStorage.setItem('theme', 'light');
+        sun.classList.replace('visible-icon', 'hidden-icon');
+        moon.classList.replace('hidden-icon', 'visible-icon');
+        modeLabel.textContent = 'Mode: light';
+      }
+    });
+  </script>
+</body>
+</html>
