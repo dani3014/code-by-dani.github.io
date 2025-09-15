@@ -38,24 +38,52 @@
 <body class="bg-white text-gray-800 antialiased transition-colors duration-500 dark:bg-gray-900 dark:text-gray-200">
 
   <!-- Navbar -->
-  <nav class="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow z-50">
-    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
-      <h1 class="font-bold text-xl text-blue-600">Dani</h1>
-      <ul class="flex space-x-6 font-medium">
-        <li><a href="#home" class="hover:text-blue-600">Home</a></li>
-        <li><a href="#about" class="hover:text-blue-600">About</a></li>
-        <li><a href="#achievements" class="hover:text-blue-600">Recognitions</a></li>
-        <li><a href="#skills" class="hover:text-blue-600">Skills</a></li>
-        <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
-        <li><a href="#contact" class="hover:text-blue-600">Contacts</a></li>
-      </ul>
-      <!-- Toggle Dark Button -->
-      <button id="toggleDark" class="ml-4 p-2 border rounded-full relative w-10 h-10 flex items-center justify-center">
+<nav class="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow z-50">
+  <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+    <!-- Logo -->
+    <h1 class="font-bold text-xl text-blue-600">Dani</h1>
+
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex space-x-6 font-medium">
+      <li><a href="#home" class="hover:text-blue-600">Home</a></li>
+      <li><a href="#about" class="hover:text-blue-600">About</a></li>
+      <li><a href="#achievements" class="hover:text-blue-600">Recognitions</a></li>
+      <li><a href="#skills" class="hover:text-blue-600">Skills</a></li>
+      <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
+      <li><a href="#contact" class="hover:text-blue-600">Contacts</a></li>
+    </ul>
+
+    <!-- Right Side: Dark Toggle + Hamburger -->
+    <div class="flex items-center space-x-4">
+      <!-- Dark Toggle -->
+      <button id="toggleDark" class="p-2 border rounded-full relative w-10 h-10 flex items-center justify-center">
         <span id="moon" class="rotate-swap visible-icon">🌙</span>
         <span id="sun" class="rotate-swap hidden-icon">☀️</span>
       </button>
+
+      <!-- Hamburger Button -->
+      <button id="menuBtn" class="md:hidden p-2 rounded focus:outline-none">
+        <!-- Icon default: 3 garis -->
+        <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800 dark:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
     </div>
-  </nav>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-gray-900 shadow-md">
+    <ul class="flex flex-col space-y-4 p-4 font-medium">
+      <li><a href="#home" class="hover:text-blue-600">Home</a></li>
+      <li><a href="#about" class="hover:text-blue-600">About</a></li>
+      <li><a href="#achievements" class="hover:text-blue-600">Recognitions</a></li>
+      <li><a href="#skills" class="hover:text-blue-600">Skills</a></li>
+      <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
+      <li><a href="#contact" class="hover:text-blue-600">Contacts</a></li>
+    </ul>
+  </div>
+</nav>
 
   <!-- Hero -->
   <section id="home" class="h-screen flex flex-col items-center justify-center text-center bg-gradient-to-br from-gray-50 via-blue-100 to-gray-200 dark:from-gray-900 dark:via-blue-900 dark:to-black">
@@ -263,6 +291,25 @@
         localStorage.setItem('theme', 'light');
         sun.classList.replace('visible-icon', 'hidden-icon');
         moon.classList.replace('hidden-icon', 'visible-icon');
+      }
+    });
+  </script>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const menuIcon = document.getElementById("menuIcon");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+
+      // Switch icon (hamburger ↔ X)
+      if (!mobileMenu.classList.contains("hidden")) {
+        menuIcon.innerHTML =
+          '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />';
+      } else {
+        menuIcon.innerHTML =
+          '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
       }
     });
   </script>
